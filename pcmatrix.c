@@ -118,7 +118,7 @@ int main (int argc, char * argv[])
   return 0;
   // ----------------------------------------------------------
 
-  printf("Producing %d matrices in mode %d.\n",NUMBER_OF_MATRICES,MATRIX_MODE);
+/*  printf("Producing %d matrices in mode %d.\n",NUMBER_OF_MATRICES,MATRIX_MODE);
   printf("Using a shared buffer of size=%d\n", BOUNDED_BUFFER_SIZE);
   printf("With %d producer and consumer thread(s).\n",numw);
   printf("\n");
@@ -138,5 +138,5 @@ int main (int argc, char * argv[])
   printf("Sum of Matrix elements --> Produced=%d = Consumed=%d\n",prs,cos);
   printf("Matrices produced=%d consumed=%d multiplied=%d\n",prodtot,constot,consmul);
 
-  return 0;
+  return 0;*/
 }

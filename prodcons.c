@@ -33,13 +33,13 @@ int fill_ptr = 0;
 int use_ptr = 0;
 int count = 0;
 
-void put(Matrix * value) {
+int put(Matrix * value) {
     buffer[fill_ptr] = value;
     fill_ptr = (fill_ptr + 1) % MAX;
     count++;
 }
 
-int get() {
+Matrix* get() {
     int tmp = buffer[use_ptr];
     use_ptr = (use_ptr + 1) % MAX;
     count--;
