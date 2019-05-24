@@ -41,29 +41,30 @@ int put(Matrix * value) {
 
 //    fill_ptr should be current spot in array(syncrhonized counter)
 
-    int fill_ptr = get_cnt(buffercounter);
+    int fill_ptr = get_cnt(synchronizedcounter->prod) % MAX;
     buffer[fill_ptr] = value;
-    fill_ptr = (fill_ptr + 1) % MAX;
-
-    increment_cnt(fill_ptr);
+    increment_cnt(buffercounter);
     increment_cnt(synchronizedcounter->cons);
 
-    return NULL;
+    return 0;
 }
 
 Matrix* get() {
+    printf("here3\n");
+
     int use_ptr = get_cnt(synchronizedcounter->cons) % MAX;
     Matrix *M = buffer[use_ptr];
     decrement_cnt(buffercounter);
-    increment_cnt(synchronizedcounter->prod);
+    increment_cnt(synchronizedcounter->cons);
     return M;
 }
 
 // Matrix PRODUCER worker thread
 void *prod_worker(void *arg) {
+    printf("produced\n");
 
     int i;
-    for (i = 0; i < LOOPS; i++) {
+//    for (i = 0; i < LOOPS; i++) {
         Matrix *M = GenMatrixRandom();
         pthread_mutex_lock(&mutex);
         while(buffercounter->value == MAX)
@@ -72,32 +73,47 @@ void *prod_worker(void *arg) {
         pthread_cond_signal(&cond);
         pthread_mutex_unlock(&mutex);
 //        todo: update stats here
-    }
+//    }
 
   return NULL;
 }
 
 // Matrix CONSUMER worker thread
 void *cons_worker(void *arg) {
-
+    printf("consumed\n");
     while (get_cnt(synchronizedcounter->cons) < LOOPS) {
         pthread_mutex_lock(&mutex);
 
         //wait for a value to be added to buffer
-        while(get_cnt(buffercounter) == 0) pthread_cond_wait(&cond, &mutex);
+        while(get_cnt(buffercounter) == 0) {
+            printf("stuck here1\n");
+            pthread_cond_wait(&cond, &mutex);
+        }
         Matrix *M1 = get();
 
         //wait for second value to be added to buffer
-        while(get_cnt(buffercounter) == 0) pthread_cond_wait(&cond, &mutex);
+        while(get_cnt(buffercounter) == 0) {
+            printf("stuck here2\n");
+            pthread_cond_wait(&cond, &mutex);
+        }
 
         pthread_cond_signal(&cond);
         pthread_mutex_unlock(&mutex);
 
+
+
+        pthread_mutex_lock(&mutex);
         Matrix *M2 = get();
+        pthread_cond_signal(&cond);
+        pthread_mutex_unlock(&mutex);
+
 
         Matrix *Multiply = MatrixMultiply(M1, M2);
 
-        if (Multiply != NULL) {
+
+        if ((get_cnt(synchronizedcounter->prod) - get_cnt(synchronizedcounter->cons)) > 0
+            && (Multiply != NULL)) {
+
             DisplayMatrix(M1, stdout);
             DisplayMatrix(M2, stdout);
             DisplayMatrix(Multiply, stdout);
@@ -111,6 +127,7 @@ void *cons_worker(void *arg) {
 
     }
 
+    printf("Consumed worked\n");
 
 //    todo: update stats again
   return NULL;

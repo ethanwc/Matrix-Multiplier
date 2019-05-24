@@ -41,32 +41,68 @@
 
 int main (int argc, char * argv[]) {
 
-
+    printf("here0\n");
     buffer = (Matrix **) malloc(sizeof(Matrix *) * BOUNDED_BUFFER_SIZE);
 
 //    time_t t;
-    int numw = NUMWORK;
+    int numw = LOOPS;
 //    int i;
     // Array of thread IDs
     pthread_t *tid;
     // Struct to track the work
     ProdConsStats *stats;
+    printf("here1\n");
 
     buffercounter = malloc(sizeof(counter_t));
     synchronizedcounter = malloc(sizeof(counters_t));
 
+    synchronizedcounter->prod = malloc(sizeof(counter_t));
+    synchronizedcounter->cons = malloc(sizeof(counter_t));
+
+
     init_cnt(buffercounter);
+    printf("here1.1\n");
+
     init_cnt(synchronizedcounter->cons);
+    printf("here1.2\n");
+
     init_cnt(synchronizedcounter->prod);
 
-//    stats->sumtotal = 0;
+    printf("here1.5\n");
 
-    tid = (pthread_t*)malloc(sizeof(pthread_t) * (numw * 2));
+        tid = (pthread_t*)malloc(sizeof(pthread_t) * (numw * 2));
     stats = (ProdConsStats *) malloc(sizeof(ProdConsStats));
 
-    pthread_create(&tid[0], NULL, prod_worker, stats);
+
+    int i;
+    for (i = 0; i < numw; i+=2) {
+        pthread_create(&tid[i], NULL, prod_worker, stats);
 //    for (j = 0; j < 100; j++) printf("");
-    pthread_create(&tid[1], NULL, cons_worker, stats);
+        pthread_create(&tid[i + 1], NULL, cons_worker, stats);
+
+    }
+    // Joins producers/consumers
+    for (i = 0; i < numw; i+=2) {
+        pthread_join(tid[i], NULL);
+        pthread_join(tid[i + 1], NULL);
+    }
+
+
+//    stats->sumtotal = 0;
+//
+//
+//    pthread_create(&tid[0], NULL, prod_worker, stats);
+////    for (j = 0; j < 100; j++) printf("");
+//    pthread_create(&tid[1], NULL, cons_worker, stats);
+//
+//
+//    pthread_create(&tid[2], NULL, prod_worker, stats);
+////    for (j = 0; j < 100; j++) printf("");
+//    pthread_create(&tid[3], NULL, cons_worker, stats);
+//
+//
+//    pthread_join(tid[0], NULL);
+//    pthread_join(tid[1], NULL);
 
 }
 
