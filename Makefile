@@ -11,6 +11,3 @@ pcMatrix: counter.c prodcons.c matrix.c pcmatrix.c
 
 clean:
 	$(RM) -f $(binaries) *.o
-
-
- 

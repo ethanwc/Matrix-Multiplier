@@ -29,9 +29,9 @@ pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 // Bounded buffer bigmatrix defined in prodcons.h
 //Matrix* buffer[MAX] = malloc(sizeof(Matrix) * MAX);
 
-int fill_ptr = 0;
-int use_ptr = 0;
-int count = 0;
+//int fill_ptr = 0;
+//int use_ptr = 0;
+//int count = 0;
 
 //test
 
@@ -48,6 +48,7 @@ int put(Matrix * value) {
     increment_cnt(fill_ptr);
     increment_cnt(synchronizedcounter->cons);
 
+    return NULL;
 }
 
 Matrix* get() {
@@ -79,7 +80,7 @@ void *prod_worker(void *arg) {
 // Matrix CONSUMER worker thread
 void *cons_worker(void *arg) {
 
-    while (synchronizedcounter->cons < LOOPS) {
+    while (get_cnt(synchronizedcounter->cons) < LOOPS) {
         pthread_mutex_lock(&mutex);
 
         //wait for a value to be added to buffer
