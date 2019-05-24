@@ -42,6 +42,7 @@
 int main (int argc, char * argv[]) {
 
 
+    buffer = (Matrix **) malloc(sizeof(Matrix *) * BOUNDED_BUFFER_SIZE);
 
     time_t t;
     int numw = NUMWORK;
@@ -50,6 +51,13 @@ int main (int argc, char * argv[]) {
     pthread_t *tid;
     // Struct to track the work
     ProdConsStats *stats;
+
+    buffercounter = malloc(sizeof(counter_t));
+    synchronizedcounter = malloc(sizeof(counters_t));
+
+    init_cnt(buffercounter);
+    init_cnt(synchronizedcounter->cons);
+    init_cnt(synchronizedcounter->prod);
 
     stats->sumtotal = 0;
 
