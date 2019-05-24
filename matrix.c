@@ -82,8 +82,10 @@ Matrix * GenMatrixRandom()
   int col;
   if (MATRIX_MODE ==0)
   {
-    row = 1 + rand() % 4;
-    col = 1 + rand() % 4;
+    //row = 1 + rand() % 4;
+    //col = 1 + rand() % 4;
+    row = 2 ;
+    col = 2 ;
   }
   else
   {

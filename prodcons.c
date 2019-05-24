@@ -28,21 +28,30 @@
 //Matrix ** bigmatrix;
 
 
-Matrix* buffer[MAX];
+//Matrix* buffer[MAX];
 int fill_ptr = 0;
 int use_ptr = 0;
-int count = 0;
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 
+//int count = 0;
+
+//cond_t empty, full;
+//mutex_t mutex;
 int put(Matrix * value) {
-    buffer[fill_ptr] = value;
-    fill_ptr = (fill_ptr + 1) % MAX;
-    count++;
+   bigmatrix[(counters->prod)->value] = value;
+   increment_cnt(counters->prod);
+
+   //(counters->prod)->value = ((counters->prod)->value + 1) % MAX;
+   return (counters->prod)->value;
 }
 
 Matrix* get() {
-    int tmp = buffer[use_ptr];
+    use_ptr = get_cot(mutex);
+    int tmp = bigmatrix[use_ptr];
     use_ptr = (use_ptr + 1) % MAX;
-    count--;
+    decrement_cnt(counters->cons);
+    //count--;
     return tmp;
 }
 
@@ -50,11 +59,23 @@ Matrix* get() {
 // Matrix PRODUCER worker thread
 void *prod_worker(void *arg)
 {
-  return NULL;
+   int i;
+   for (i = 0; i < LOOPS; i ++) {
+      Matrix matrix = GenMatrixRandom();
+      pthread_mutex_lock(&(counters->prod)->lock);
+      while((counters->prod)->value == MAX){
+         //Pthread_cond_wait(&empty, &counter->lock);
+      }
+      put(matrix);
+      //Pthread_cond_signal(&full);
+      pthread_mutex_unlock(&(counters->prod)->lock);
+   }
+   return NULL;
 }
 
 // Matrix CONSUMER worker thread
 void *cons_worker(void *arg)
 {
+  
   return NULL;
 }

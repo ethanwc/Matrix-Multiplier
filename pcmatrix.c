@@ -42,7 +42,16 @@ int main (int argc, char * argv[])
 {
   // Process command line arguments
   int numw = NUMWORK;
-  if (argc==1)
+
+  ProdConsStats * prodconsPtr;
+
+  counters = malloc(sizeof(counters_t));
+  counters->prod = malloc(sizeof(counter_t));
+  counters->cons = malloc(sizeof(counter_t));
+  init_cnt(counters->prod);
+  init_cnt(counters->cons);
+  
+  /*if (argc==1)
   {
     BOUNDED_BUFFER_SIZE=MAX;
     NUMBER_OF_MATRICES=LOOPS;
@@ -80,7 +89,7 @@ int main (int argc, char * argv[])
       MATRIX_MODE=atoi(argv[4]);
     }
     printf("USING: worker_threads=%d bounded_buffer_size=%d matricies=%d matrix_mode=%d\n",numw,BOUNDED_BUFFER_SIZE,NUMBER_OF_MATRICES,MATRIX_MODE);
-  }
+  }*/
   bigmatrix = (Matrix **) malloc(sizeof(Matrix *) * BOUNDED_BUFFER_SIZE);
 
   time_t t;
@@ -115,18 +124,18 @@ int main (int argc, char * argv[])
       m3=NULL;
     }
   }
-  return 0;
+  //return 0;
   // ----------------------------------------------------------
 
-/*  printf("Producing %d matrices in mode %d.\n",NUMBER_OF_MATRICES,MATRIX_MODE);
+
+  printf("Producing %d matrices in mode %d.\n",NUMBER_OF_MATRICES,MATRIX_MODE);
   printf("Using a shared buffer of size=%d\n", BOUNDED_BUFFER_SIZE);
   printf("With %d producer and consumer thread(s).\n",numw);
   printf("\n");
-
   pthread_t pr;
   pthread_t co;
 
-  int prs = 0;
+  int prs = (*counters).prod->value;
   int cos = 0;
   int prodtot = 0;
   int constot = 0;
@@ -137,6 +146,7 @@ int main (int argc, char * argv[])
 
   printf("Sum of Matrix elements --> Produced=%d = Consumed=%d\n",prs,cos);
   printf("Matrices produced=%d consumed=%d multiplied=%d\n",prodtot,constot,consmul);
+  printf("time: %d\n", t - clock());
 
-  return 0;*/
+  return 0;
 }

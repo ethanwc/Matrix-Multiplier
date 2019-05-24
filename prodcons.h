@@ -9,6 +9,8 @@
 
 Matrix ** bigmatrix;
 
+counters_t* counters;
+
 // PRODUCER-CONSUMER put() get() function prototypes
 
 // Data structure to track matrix production / consumption stats
