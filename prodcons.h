@@ -7,10 +7,9 @@
  *  Spring 2019
  */
 
-Matrix ** bigmatrix;
-
-counters_t* counters;
-
+Matrix ** buffer;
+counter_t *buffercounter;
+counters_t *synchronizedcounter;
 // PRODUCER-CONSUMER put() get() function prototypes
 
 // Data structure to track matrix production / consumption stats

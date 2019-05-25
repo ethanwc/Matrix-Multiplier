@@ -82,10 +82,10 @@ Matrix * GenMatrixRandom()
   int col;
   if (MATRIX_MODE ==0)
   {
-    //row = 1 + rand() % 4;
-    //col = 1 + rand() % 4;
-    row = 2 ;
-    col = 2 ;
+    row = 1 + rand() % 4;
+    col = 1 + rand() % 4;
+    //row = 2 ;
+    //col = 2 ;
   }
   else
   {
@@ -110,8 +110,10 @@ Matrix * MatrixMultiply(Matrix * m1, Matrix * m2)
   if ((m1==NULL) || (m2==NULL))
     printf("m1=%p  m2=%p!\n",m1,m2);
   int sum=0;
+  
   if (m1->cols != m2->rows)
   {
+    printf("NULL\n");
     return NULL;
   }
   printf("MULTIPLY (%d x %d) BY (%d x %d):\n",m1->rows,m1->cols,m2->rows,m2->cols);
@@ -131,6 +133,7 @@ Matrix * MatrixMultiply(Matrix * m1, Matrix * m2)
       sum=0;
     }
   }
+  printf("multiply done\n");
   return newmat;
 }
 
@@ -141,6 +144,7 @@ void DisplayMatrix(Matrix * mat, FILE *stream)
     printf("DisplayMatrix: EMPTY matrix\n");
     return;
   }
+  printf("display\n");
   int ** matrix = mat->m;
   int height = mat->rows;
   int width = mat->cols;

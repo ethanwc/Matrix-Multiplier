@@ -1,3 +1,0 @@
-/home/ethanwc/Documents/380/Matrix-Multiplier/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/ethanwc/Documents/380/Matrix-Multiplier/cmake-build-debug/CMakeFiles/Matrix_Multiplier.dir
-/home/ethanwc/Documents/380/Matrix-Multiplier/cmake-build-debug/CMakeFiles/edit_cache.dir
