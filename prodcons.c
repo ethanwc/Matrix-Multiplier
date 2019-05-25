@@ -119,13 +119,13 @@ void *cons_worker(void *arg) {
             DisplayMatrix(Multiply, stdout);
             printf("\n");
 
-            FreeMatrix(M1);
-            FreeMatrix(M2);
-            FreeMatrix(Multiply);
+            
         } else {
             printf("not working\n");
         }
-        
+        FreeMatrix(M1);
+        FreeMatrix(M2);
+        FreeMatrix(Multiply);
     }
 
     printf("Consumed worked\n");

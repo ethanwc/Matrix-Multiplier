@@ -109,8 +109,7 @@ Matrix * MatrixMultiply(Matrix * m1, Matrix * m2)
 {
   if ((m1==NULL) || (m2==NULL))
     printf("m1=%p  m2=%p!\n",m1,m2);
-  int sum=0;
-  
+  int sum=0;  
   if (m1->cols != m2->rows)
   {
     printf("NULL\n");
