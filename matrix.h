@@ -11,9 +11,9 @@
 #define COL 5
 
 typedef struct matrix {
-  int rows;
-  int cols;
-  int ** m;
+    int rows;
+    int cols;
+    int ** m;
 } Matrix;
 
 int theseed;

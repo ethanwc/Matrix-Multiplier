@@ -9,15 +9,17 @@
 
 // SYNCHRONIZED COUNTER
 
+#include <sys/types.h>
+
 // counter structures
 typedef struct __counter_t {
-  int value;
-  pthread_mutex_t  lock;
+    int value;
+    pthread_mutex_t  lock;
 } counter_t;
 
 typedef struct __counters_t {
-  counter_t * prod;
-  counter_t * cons;
+    counter_t * prod;
+    counter_t * cons;
 } counters_t;
 
 // counter methods

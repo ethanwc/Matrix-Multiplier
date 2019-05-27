@@ -65,17 +65,17 @@ void *prod_worker(void *arg) {
 
     int i;
 //    for (i = 0; i < LOOPS; i++) {
-        Matrix *M = GenMatrixRandom();
-        pthread_mutex_lock(&mutex);
-        while(buffercounter->value == MAX)
-            pthread_cond_wait(&cond, &mutex);
-        put(M);
-        pthread_cond_signal(&cond);
-        pthread_mutex_unlock(&mutex);
+    Matrix *M = GenMatrixRandom();
+    pthread_mutex_lock(&mutex);
+    while(buffercounter->value == MAX)
+        pthread_cond_wait(&cond, &mutex);
+    put(M);
+    pthread_cond_signal(&cond);
+    pthread_mutex_unlock(&mutex);
 //        todo: update stats here
 //    }
 
-  return NULL;
+    return NULL;
 }
 
 // Matrix CONSUMER worker thread
@@ -110,9 +110,9 @@ void *cons_worker(void *arg) {
 
         Matrix *Multiply = MatrixMultiply(M1, M2);
 
+        printf("Multiply occured?\n");
 
-        if ((get_cnt(synchronizedcounter->prod) - get_cnt(synchronizedcounter->cons)) > 0
-            && (Multiply != NULL)) {
+        if (Multiply != NULL) {
 
             DisplayMatrix(M1, stdout);
             DisplayMatrix(M2, stdout);
@@ -130,5 +130,5 @@ void *cons_worker(void *arg) {
     printf("Consumed worked\n");
 
 //    todo: update stats again
-  return NULL;
+    return NULL;
 }

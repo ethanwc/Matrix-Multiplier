@@ -70,7 +70,7 @@ int main (int argc, char * argv[]) {
 
     printf("here1.5\n");
 
-        tid = (pthread_t*)malloc(sizeof(pthread_t) * (numw * 2));
+    tid = (pthread_t*)malloc(sizeof(pthread_t) * (numw * 2));
     stats = (ProdConsStats *) malloc(sizeof(ProdConsStats));
 
 

@@ -17,9 +17,9 @@ counters_t *synchronizedcounter;
 // multtotal - total number of matrices multipled
 // matrixtotal - total number of matrces produced or consumed
 typedef struct prodcons {
-  int sumtotal;
-  int multtotal;
-  int matrixtotal;
+    int sumtotal;
+    int multtotal;
+    int matrixtotal;
 } ProdConsStats;
 
 // PRODUCER-CONSUMER thread method function prototypes

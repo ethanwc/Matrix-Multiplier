@@ -20,14 +20,14 @@
 // Based on Three Easy Pieces
 
 void init_cnt(counter_t *c)  {
-  c->value = 0;
-  pthread_mutex_init(&c->lock, NULL);
+    c->value = 0;
+    pthread_mutex_init(&c->lock, NULL);
 }
 
 void increment_cnt(counter_t *c)  {
-  pthread_mutex_lock(&c->lock);
-  c->value++;
-  pthread_mutex_unlock(&c->lock);
+    pthread_mutex_lock(&c->lock);
+    c->value++;
+    pthread_mutex_unlock(&c->lock);
 }
 
 void decrement_cnt(counter_t *c)  {
@@ -37,8 +37,8 @@ void decrement_cnt(counter_t *c)  {
 }
 
 int get_cnt(counter_t *c)  {
-  pthread_mutex_lock(&c->lock);
-  int rc = c->value;
-  pthread_mutex_unlock(&c->lock);
-  return rc;
+    pthread_mutex_lock(&c->lock);
+    int rc = c->value;
+    pthread_mutex_unlock(&c->lock);
+    return rc;
 }

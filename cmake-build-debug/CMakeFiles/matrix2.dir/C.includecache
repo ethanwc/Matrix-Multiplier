@@ -1,0 +1,84 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.c
+stdio.h
+-
+pthread.h
+-
+counter.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.h
+
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.h
+sys/types.h
+-
+
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.c
+stdio.h
+-
+stdlib.h
+-
+pthread.h
+-
+assert.h
+-
+unistd.h
+-
+sched.h
+-
+string.h
+-
+time.h
+-
+matrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.h
+pcmatrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.h
+
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.h
+
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.c
+stdio.h
+-
+stdlib.h
+-
+pthread.h
+-
+assert.h
+-
+time.h
+-
+matrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.h
+counter.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.h
+prodcons.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/prodcons.h
+pcmatrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.h
+
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.h
+
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/prodcons.c
+stdio.h
+-
+stdlib.h
+-
+pthread.h
+-
+counter.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.h
+matrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.h
+pcmatrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.h
+prodcons.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/prodcons.h
+
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/prodcons.h
+
