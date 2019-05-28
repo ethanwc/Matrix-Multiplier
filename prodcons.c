@@ -118,7 +118,7 @@ void *cons_worker(void *arg) {
             printf("    =\n");
             DisplayMatrix(Multiply, stdout);
             printf("\n");
-
+            printf("----------------------------\n");
             
         } else {
             printf("not working\n");
