@@ -43,10 +43,10 @@ RM = "/cygdrive/c/Users/Ethan Desktop/.CLion2018.1/system/cygwin_cmake/bin/cmake
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2"
+CMAKE_SOURCE_DIR = "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/cmake-build-debug"
+CMAKE_BINARY_DIR = "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/matrix2.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/matrix2.dir/flags.make
 
 CMakeFiles/matrix2.dir/pcmatrix.c.o: CMakeFiles/matrix2.dir/flags.make
 CMakeFiles/matrix2.dir/pcmatrix.c.o: ../pcmatrix.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/matrix2.dir/pcmatrix.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/matrix2.dir/pcmatrix.c.o   -c "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/matrix2.dir/pcmatrix.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/matrix2.dir/pcmatrix.c.o   -c "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.c"
 
 CMakeFiles/matrix2.dir/pcmatrix.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/matrix2.dir/pcmatrix.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.c" > CMakeFiles/matrix2.dir/pcmatrix.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.c" > CMakeFiles/matrix2.dir/pcmatrix.c.i
 
 CMakeFiles/matrix2.dir/pcmatrix.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/matrix2.dir/pcmatrix.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.c" -o CMakeFiles/matrix2.dir/pcmatrix.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.c" -o CMakeFiles/matrix2.dir/pcmatrix.c.s
 
 CMakeFiles/matrix2.dir/pcmatrix.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/matrix2.dir/pcmatrix.c.o.provides.build: CMakeFiles/matrix2.dir/pcmat
 
 CMakeFiles/matrix2.dir/matrix.c.o: CMakeFiles/matrix2.dir/flags.make
 CMakeFiles/matrix2.dir/matrix.c.o: ../matrix.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/matrix2.dir/matrix.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/matrix2.dir/matrix.c.o   -c "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/matrix2.dir/matrix.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/matrix2.dir/matrix.c.o   -c "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.c"
 
 CMakeFiles/matrix2.dir/matrix.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/matrix2.dir/matrix.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.c" > CMakeFiles/matrix2.dir/matrix.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.c" > CMakeFiles/matrix2.dir/matrix.c.i
 
 CMakeFiles/matrix2.dir/matrix.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/matrix2.dir/matrix.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.c" -o CMakeFiles/matrix2.dir/matrix.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.c" -o CMakeFiles/matrix2.dir/matrix.c.s
 
 CMakeFiles/matrix2.dir/matrix.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/matrix2.dir/matrix.c.o.provides.build: CMakeFiles/matrix2.dir/matrix.
 
 CMakeFiles/matrix2.dir/counter.c.o: CMakeFiles/matrix2.dir/flags.make
 CMakeFiles/matrix2.dir/counter.c.o: ../counter.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/matrix2.dir/counter.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/matrix2.dir/counter.c.o   -c "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/matrix2.dir/counter.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/matrix2.dir/counter.c.o   -c "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.c"
 
 CMakeFiles/matrix2.dir/counter.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/matrix2.dir/counter.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.c" > CMakeFiles/matrix2.dir/counter.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.c" > CMakeFiles/matrix2.dir/counter.c.i
 
 CMakeFiles/matrix2.dir/counter.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/matrix2.dir/counter.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.c" -o CMakeFiles/matrix2.dir/counter.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.c" -o CMakeFiles/matrix2.dir/counter.c.s
 
 CMakeFiles/matrix2.dir/counter.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/matrix2.dir/counter.c.o.provides.build: CMakeFiles/matrix2.dir/counte
 
 CMakeFiles/matrix2.dir/prodcons.c.o: CMakeFiles/matrix2.dir/flags.make
 CMakeFiles/matrix2.dir/prodcons.c.o: ../prodcons.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/matrix2.dir/prodcons.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/matrix2.dir/prodcons.c.o   -c "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/prodcons.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/matrix2.dir/prodcons.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/matrix2.dir/prodcons.c.o   -c "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.c"
 
 CMakeFiles/matrix2.dir/prodcons.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/matrix2.dir/prodcons.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/prodcons.c" > CMakeFiles/matrix2.dir/prodcons.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.c" > CMakeFiles/matrix2.dir/prodcons.c.i
 
 CMakeFiles/matrix2.dir/prodcons.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/matrix2.dir/prodcons.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/prodcons.c" -o CMakeFiles/matrix2.dir/prodcons.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.c" -o CMakeFiles/matrix2.dir/prodcons.c.s
 
 CMakeFiles/matrix2.dir/prodcons.c.o.requires:
 
@@ -169,7 +169,7 @@ matrix2.exe: CMakeFiles/matrix2.dir/counter.c.o
 matrix2.exe: CMakeFiles/matrix2.dir/prodcons.c.o
 matrix2.exe: CMakeFiles/matrix2.dir/build.make
 matrix2.exe: CMakeFiles/matrix2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable matrix2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable matrix2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/matrix2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -189,6 +189,6 @@ CMakeFiles/matrix2.dir/clean:
 .PHONY : CMakeFiles/matrix2.dir/clean
 
 CMakeFiles/matrix2.dir/depend:
-	cd "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/cmake-build-debug" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/cmake-build-debug" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/cmake-build-debug/CMakeFiles/matrix2.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/CMakeFiles/matrix2.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/matrix2.dir/depend
 

@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.c
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.c
 stdio.h
 -
 pthread.h
 -
 counter.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.h
 
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.h
 sys/types.h
 -
 
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.c
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.c
 stdio.h
 -
 stdlib.h
@@ -36,13 +36,13 @@ string.h
 time.h
 -
 matrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.h
 pcmatrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.h
 
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.h
 
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.c
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.c
 stdio.h
 -
 stdlib.h
@@ -54,17 +54,17 @@ assert.h
 time.h
 -
 matrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.h
 counter.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.h
 prodcons.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/prodcons.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.h
 pcmatrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.h
 
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.h
 
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/prodcons.c
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.c
 stdio.h
 -
 stdlib.h
@@ -72,13 +72,13 @@ stdlib.h
 pthread.h
 -
 counter.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/counter.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.h
 matrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/matrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.h
 pcmatrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/pcmatrix.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.h
 prodcons.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/prodcons.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.h
 
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/matrix2/prodcons.h
+/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.h
 

@@ -7,9 +7,6 @@
  *  Spring 2019
  */
 
-Matrix ** buffer;
-counter_t *buffercounter;
-counters_t *synchronizedcounter;
 // PRODUCER-CONSUMER put() get() function prototypes
 
 // Data structure to track matrix production / consumption stats
@@ -29,3 +26,4 @@ void *cons_worker(void *arg);
 // Routines to add and remove matrices from the bounded buffer
 int put(Matrix *value);
 Matrix * get();
+void setup();

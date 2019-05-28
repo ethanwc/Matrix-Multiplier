@@ -25,16 +25,35 @@ pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 // Producer consumer data structures
 
+
 //init_cnt(buffercounter);
 // Bounded buffer bigmatrix defined in prodcons.h
-//Matrix* buffer[MAX] = malloc(sizeof(Matrix) * MAX);
+Matrix* buffer[MAX];
+
+
+
+counter_t *buffercounter;
+counters_t *synchronizedcounter;
 
 //int fill_ptr = 0;
 //int use_ptr = 0;
 //int count = 0;
 
 //test
+void setup() {
 
+    buffercounter = malloc(sizeof(counter_t));
+    synchronizedcounter = malloc(sizeof(counters_t));
+
+    synchronizedcounter->prod = malloc(sizeof(counter_t));
+    synchronizedcounter->cons = malloc(sizeof(counter_t));
+
+
+    init_cnt(buffercounter);
+    init_cnt(synchronizedcounter->cons);
+    init_cnt(synchronizedcounter->prod);
+
+}
 
 // Bounded buffer put() get()
 int put(Matrix * value) {
@@ -44,7 +63,7 @@ int put(Matrix * value) {
     int fill_ptr = get_cnt(synchronizedcounter->prod) % MAX;
     buffer[fill_ptr] = value;
     increment_cnt(buffercounter);
-    increment_cnt(synchronizedcounter->cons);
+    increment_cnt(synchronizedcounter->prod);
 
     return 0;
 }
@@ -64,16 +83,15 @@ void *prod_worker(void *arg) {
     printf("produced\n");
 
     int i;
-//    for (i = 0; i < LOOPS; i++) {
+    for (i = 0; i < LOOPS; i++) {
     Matrix *M = GenMatrixRandom();
     pthread_mutex_lock(&mutex);
-    while(buffercounter->value == MAX)
-        pthread_cond_wait(&cond, &mutex);
+    while(buffercounter->value == MAX) pthread_cond_wait(&cond, &mutex);
     put(M);
     pthread_cond_signal(&cond);
     pthread_mutex_unlock(&mutex);
 //        todo: update stats here
-//    }
+    }
 
     return NULL;
 }
