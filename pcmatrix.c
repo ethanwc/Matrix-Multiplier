@@ -20,13 +20,12 @@
  *  Correct programs will produce and consume the same number of matrices, and
  *  report the same sum for all matrix elements produced and consumed.
  *
- *  For matrix multiplication only ~25% may be e
- *  and consume matrices.  Each thread produces a total sum of the value of
+ *  Each thread produces a total sum of the value of
  *  randomly generated elements.  Producer sum and consumer sum must match.
  *
  *  University of Washington, Tacoma
  *  TCSS 422 - Operating Systems
- *  Fall 2018
+ *  Spring 2019
  */
 
 #include <stdio.h>
@@ -41,18 +40,16 @@
 
 int main (int argc, char * argv[])
 {
-    time_t t;
     int numw = NUMWORK;
-    int i;
+    int i , producers, consumers, productTotal, consumerTotal, consumerMultiply;
+
     // Array of thread IDs
     pthread_t *tid;
     // Struct to track the work
     ProdConsStats *stats;
 
-
-    // Seed the random number generator with the system time
-    srand((unsigned) time(&t));
-    t = clock(); // To measure runtime
+    //setup the conters
+    setup();
 
     printf("Producing %d %dx%d matrices.\n",LOOPS, ROW, COL);
     printf("Using a shared buffer of size=%d\n", MAX);
@@ -63,15 +60,14 @@ int main (int argc, char * argv[])
     tid = (pthread_t*)malloc(sizeof(pthread_t) * (numw * 2));
     stats = (ProdConsStats *) malloc(sizeof(ProdConsStats));
 
+    // initialize the stats to zero
     stats->sumtotal = 0;
     stats->multtotal = 0;
     stats->matrixtotal = 0;
 
-    setup();
     // create producers/consumers
     for (i = 0; i < numw; i+=2) {
         pthread_create(&tid[i], NULL, prod_worker, stats);
-//    for (j = 0; j < 100; j++) printf("");
         pthread_create(&tid[i + 1], NULL, cons_worker, stats);
 
     }
@@ -82,14 +78,17 @@ int main (int argc, char * argv[])
     }
 
 
-    int prs = stats->sumtotal;
-    int cos = stats->sumtotal;
-    int prodtot = stats->matrixtotal;
-    int constot = stats->matrixtotal;
-    int consmul = stats->multtotal;
+    producers = stats->sumtotal;
+    consumers = stats->sumtotal;
+    productTotal = stats->matrixtotal;
+    consumerTotal = stats->matrixtotal;
+    consumerMultiply = stats->multtotal;
 
-    printf("Sum of Matrix elements --> Produced=%d = Consumed=%d\n",prs,cos);
-    printf("Matrices produced=%d consumed=%d multiplied=%d\n",prodtot,constot,consmul);
+    // consume ProdConsStats from producer and consumer threads
+    // add up total matrix stats in producers, consumers, productTotal, consumerTotal, consmerMultiply
+
+    printf("Sum of Matrix elements --> Produced=%d = Consumed=%d\n",producers, consumers);
+    printf("Matrices produced=%d consumed=%d multiplied=%d\n",productTotal ,consumerTotal, consumerMultiply);
 
     return 0;
 }
