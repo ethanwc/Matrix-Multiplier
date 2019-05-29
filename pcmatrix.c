@@ -70,7 +70,6 @@ int main (int argc, char * argv[])
     stats->multtotal = 0;
     stats->matrixtotal = 0;
 
-
     // create producers/consumers
     for (i = 0; i < numw; i+=2) {
         pthread_create(&tid[i], NULL, prod_worker, stats);
