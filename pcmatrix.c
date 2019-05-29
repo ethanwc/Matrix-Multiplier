@@ -42,7 +42,7 @@ int main (int argc, char * argv[])
 {
     time_t times;
     int numw = NUMWORK;
-    int i , products, consumers, productTotal, consumerTotal, consumerMultiply;
+    int i , producers, consumers, productTotal, consumerTotal, consumerMultiply;
 
     // Array of thread IDs
     pthread_t *tid;
@@ -66,6 +66,7 @@ int main (int argc, char * argv[])
     tid = (pthread_t*)malloc(sizeof(pthread_t) * (numw * 2));
     stats = (ProdConsStats *) malloc(sizeof(ProdConsStats));
 
+    // initialize the stats to zero
     stats->sumtotal = 0;
     stats->multtotal = 0;
     stats->matrixtotal = 0;
@@ -83,16 +84,16 @@ int main (int argc, char * argv[])
     }
 
 
-    products = stats->sumtotal;
+    producers = stats->sumtotal;
     consumers = stats->sumtotal;
     productTotal = stats->matrixtotal;
     consumerTotal = stats->matrixtotal;
     consumerMultiply = stats->multtotal;
 
     // consume ProdConsStats from producer and consumer threads
-    // add up total matrix stats in products, consumers, productTotal, consumerTotal, consmerMultiply
+    // add up total matrix stats in producers, consumers, productTotal, consumerTotal, consmerMultiply
 
-    printf("Sum of Matrix elements --> Produced=%d = Consumed=%d\n",products, consumers);
+    printf("Sum of Matrix elements --> Produced=%d = Consumed=%d\n",producers, consumers);
     printf("Matrices produced=%d consumed=%d multiplied=%d\n",productTotal ,consumerTotal, consumerMultiply);
 
     // Displays the runtime
