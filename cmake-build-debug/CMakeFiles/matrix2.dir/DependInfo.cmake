@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.c" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/CMakeFiles/matrix2.dir/counter.c.o"
-  "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.c" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/CMakeFiles/matrix2.dir/matrix.c.o"
-  "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.c" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/CMakeFiles/matrix2.dir/pcmatrix.c.o"
-  "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.c" "/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/CMakeFiles/matrix2.dir/prodcons.c.o"
+  "/home/ethanwc/Documents/380/Matrix-Multiplier222/counter.c" "/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/CMakeFiles/matrix2.dir/counter.c.o"
+  "/home/ethanwc/Documents/380/Matrix-Multiplier222/matrix.c" "/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/CMakeFiles/matrix2.dir/matrix.c.o"
+  "/home/ethanwc/Documents/380/Matrix-Multiplier222/pcmatrix.c" "/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/CMakeFiles/matrix2.dir/pcmatrix.c.o"
+  "/home/ethanwc/Documents/380/Matrix-Multiplier222/prodcons.c" "/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/CMakeFiles/matrix2.dir/prodcons.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

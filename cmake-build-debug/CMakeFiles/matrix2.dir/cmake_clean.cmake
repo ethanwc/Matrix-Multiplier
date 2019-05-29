@@ -4,8 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/matrix2.dir/counter.c.o"
   "CMakeFiles/matrix2.dir/prodcons.c.o"
   "matrix2.pdb"
-  "matrix2.exe"
-  "libmatrix2.dll.a"
+  "matrix2"
 )
 
 # Per-language clean rules from dependency scanning.

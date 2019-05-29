@@ -6,19 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.c
-stdio.h
--
-pthread.h
--
-counter.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.h
-
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.h
+/home/ethanwc/Documents/380/Matrix-Multiplier222/counter.h
 sys/types.h
 -
 
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.c
+/home/ethanwc/Documents/380/Matrix-Multiplier222/matrix.h
+
+/home/ethanwc/Documents/380/Matrix-Multiplier222/pcmatrix.c
 stdio.h
 -
 stdlib.h
@@ -26,59 +20,39 @@ stdlib.h
 pthread.h
 -
 assert.h
+-
+time.h
+-
+matrix.h
+/home/ethanwc/Documents/380/Matrix-Multiplier222/matrix.h
+counter.h
+/home/ethanwc/Documents/380/Matrix-Multiplier222/counter.h
+prodcons.h
+/home/ethanwc/Documents/380/Matrix-Multiplier222/prodcons.h
+pcmatrix.h
+/home/ethanwc/Documents/380/Matrix-Multiplier222/pcmatrix.h
+
+/home/ethanwc/Documents/380/Matrix-Multiplier222/pcmatrix.h
+
+/home/ethanwc/Documents/380/Matrix-Multiplier222/prodcons.c
+stdio.h
+-
+stdlib.h
+-
+pthread.h
+-
+stdlib.h
 -
 unistd.h
 -
-sched.h
--
-string.h
--
-time.h
--
-matrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.h
-pcmatrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.h
-
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.h
-
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.c
-stdio.h
--
-stdlib.h
--
-pthread.h
--
-assert.h
--
-time.h
--
-matrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.h
 counter.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.h
-prodcons.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.h
-pcmatrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.h
-
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.h
-
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.c
-stdio.h
--
-stdlib.h
--
-pthread.h
--
-counter.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.h
+/home/ethanwc/Documents/380/Matrix-Multiplier222/counter.h
 matrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.h
+/home/ethanwc/Documents/380/Matrix-Multiplier222/matrix.h
 pcmatrix.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.h
+/home/ethanwc/Documents/380/Matrix-Multiplier222/pcmatrix.h
 prodcons.h
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.h
+/home/ethanwc/Documents/380/Matrix-Multiplier222/prodcons.h
 
-/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.h
+/home/ethanwc/Documents/380/Matrix-Multiplier222/prodcons.h
 

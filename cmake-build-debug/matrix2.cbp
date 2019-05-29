@@ -8,97 +8,101 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug"/>
+				<Option working_dir="/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug"/>
+				<Option working_dir="/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="matrix2">
-				<Option output="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/matrix2.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug"/>
+				<Option output="/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/matrix2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 matrix2"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 matrix2"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="matrix2/fast">
-				<Option output="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/matrix2.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug"/>
+				<Option output="/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/matrix2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 matrix2/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Ethan\ Desktop/CLionProjects/Matrix-Multiplier/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 matrix2/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ethanwc/Documents/380/Matrix-Multiplier222/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.c">
+		<Unit filename="/home/ethanwc/Documents/380/Matrix-Multiplier222/counter.c">
 			<Option target="matrix2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/counter.h">
+		<Unit filename="/home/ethanwc/Documents/380/Matrix-Multiplier222/counter.h">
 			<Option target="matrix2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.c">
+		<Unit filename="/home/ethanwc/Documents/380/Matrix-Multiplier222/matrix.c">
 			<Option target="matrix2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/matrix.h">
+		<Unit filename="/home/ethanwc/Documents/380/Matrix-Multiplier222/matrix.h">
 			<Option target="matrix2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.c">
+		<Unit filename="/home/ethanwc/Documents/380/Matrix-Multiplier222/pcmatrix.c">
 			<Option target="matrix2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/pcmatrix.h">
+		<Unit filename="/home/ethanwc/Documents/380/Matrix-Multiplier222/pcmatrix.h">
 			<Option target="matrix2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.c">
+		<Unit filename="/home/ethanwc/Documents/380/Matrix-Multiplier222/prodcons.c">
 			<Option target="matrix2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/prodcons.h">
+		<Unit filename="/home/ethanwc/Documents/380/Matrix-Multiplier222/prodcons.h">
 			<Option target="matrix2"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Ethan Desktop/CLionProjects/Matrix-Multiplier/CMakeLists.txt">
+		<Unit filename="/home/ethanwc/Documents/380/Matrix-Multiplier222/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

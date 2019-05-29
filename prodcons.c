@@ -7,13 +7,15 @@
  *
  *  University of Washington, Tacoma
  *  TCSS 422 - Operating Systems
- *  Spring 2019
+ *  Fall 2016
  */
 
 // Include only libraries for this module
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include "counter.h"
 #include "matrix.h"
 #include "pcmatrix.h"
@@ -21,132 +23,129 @@
 
 
 // Define Locks and Condition variables here
+pthread_cond_t empty = PTHREAD_COND_INITIALIZER, fill = PTHREAD_COND_INITIALIZER;
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
+
 // Producer consumer data structures
+Matrix * bigmatrix[MAX];
 
+//Synchronized counter for the total # of
+// producer/consumer
+counters_t *synCounter;
 
-//init_cnt(buffercounter);
-// Bounded buffer bigmatrix defined in prodcons.h
-Matrix* buffer[MAX];
+//General sync counter;
+counter_t *counter;
 
-
-
-counter_t *buffercounter;
-counters_t *synchronizedcounter;
-
-//int fill_ptr = 0;
-//int use_ptr = 0;
-//int count = 0;
-
-//test
-void setup() {
-
-    buffercounter = malloc(sizeof(counter_t));
-    synchronizedcounter = malloc(sizeof(counters_t));
-
-    synchronizedcounter->prod = malloc(sizeof(counter_t));
-    synchronizedcounter->cons = malloc(sizeof(counter_t));
-
-
-    init_cnt(buffercounter);
-    init_cnt(synchronizedcounter->cons);
-    init_cnt(synchronizedcounter->prod);
-
+// Define the stuff used
+void setuo() {
+    counter_t *prod, *cons; //Producer and consumer counter
+    prod = (counter_t *) malloc(sizeof(counter_t));
+    cons = (counter_t *) malloc(sizeof(counter_t));
+    counter = (counter_t *) malloc(sizeof(counter_t));
+    synCounter = (counters_t *) malloc(sizeof(counters_t));
+    init_cnt(prod);
+    init_cnt(cons);
+    init_cnt(counter);
+    synCounter->prod = prod;
+    synCounter->cons = cons;
 }
 
 // Bounded buffer put() get()
-int put(Matrix * value) {
-
-//    fill_ptr should be current spot in array(syncrhonized counter)
-
-    int fill_ptr = get_cnt(synchronizedcounter->prod) % MAX;
-    buffer[fill_ptr] = value;
-    increment_cnt(buffercounter);
-    increment_cnt(synchronizedcounter->prod);
-
+int put(Matrix * value)
+{
+    int fill_ptr;
+    fill_ptr = get_cnt(synCounter->prod) % MAX;
+    bigmatrix[fill_ptr] = value;
+    increment_cnt(synCounter->prod);
+    increment_cnt(counter);
     return 0;
 }
 
-Matrix* get() {
-    printf("here3\n");
+Matrix * get()
+{
+    int use_ptr;
+    use_ptr = get_cnt(synCounter->cons) % MAX;
+    Matrix *returnM = bigmatrix[use_ptr];
+    increment_cnt(synCounter->cons);
+    decrement_cnt(counter);
 
-    int use_ptr = get_cnt(synchronizedcounter->cons) % MAX;
-    Matrix *M = buffer[use_ptr];
-    decrement_cnt(buffercounter);
-    increment_cnt(synchronizedcounter->cons);
-    return M;
+    return returnM;
 }
 
+
 // Matrix PRODUCER worker thread
-void *prod_worker(void *arg) {
-    printf("produced\n");
-
+void *prod_worker(void *arg)
+{
     int i;
-    for (i = 0; i < LOOPS; i++) {
-    Matrix *M = GenMatrixRandom();
-    pthread_mutex_lock(&mutex);
-    while(buffercounter->value == MAX) pthread_cond_wait(&cond, &mutex);
-    put(M);
-    pthread_cond_signal(&cond);
-    pthread_mutex_unlock(&mutex);
-//        todo: update stats here
-    }
+    ProdConsStats *stats = arg;
 
+    for (i = 0; i < LOOPS; i++) {
+//    Matrix *value = GenMatrixBySize(5, 5);
+        Matrix *value = GenMatrixRandom();
+
+        // If the buffer is full producer waits
+        pthread_mutex_lock(&mutex);
+        while (get_cnt(counter) == MAX) {
+            pthread_cond_wait(&empty, &mutex);
+        }
+        put(value);
+        pthread_cond_signal(&fill);
+        pthread_mutex_unlock(&mutex);
+    }
+    stats->matrixtotal = get_cnt(synCounter->prod);
     return NULL;
 }
 
 // Matrix CONSUMER worker thread
-void *cons_worker(void *arg) {
-    printf("consumed\n");
-    while (get_cnt(synchronizedcounter->cons) < LOOPS) {
+void *cons_worker(void *arg)
+{
+    int use_ptr;
+    ProdConsStats *stats = arg;
+    Matrix *product;
+
+    // while loop goes until LOOP number of matrix has been consumed
+    while (get_cnt(synCounter->cons) < LOOPS) {
         pthread_mutex_lock(&mutex);
 
-        //wait for a value to be added to buffer
-        while(get_cnt(buffercounter) == 0) {
-            printf("stuck here1\n");
-            pthread_cond_wait(&cond, &mutex);
-        }
-        Matrix *M1 = get();
+        // Wait if buffer is empty
+        while (get_cnt(counter) == 0)
+            pthread_cond_wait(&fill, &mutex);
+        Matrix *matrix1 = get();
 
-        //wait for second value to be added to buffer
-        while(get_cnt(buffercounter) == 0) {
-            printf("stuck here2\n");
-            pthread_cond_wait(&cond, &mutex);
-        }
-
-        pthread_cond_signal(&cond);
+        // Waits if buffer is empty again
+        while (get_cnt(counter) == 0 && get_cnt(synCounter->cons) < LOOPS)
+            pthread_cond_wait(&fill, &mutex);
+        pthread_cond_signal(&empty);
         pthread_mutex_unlock(&mutex);
 
+        // Before getting the second matrix to multiply, checks to see if the next matrix in the buffer
+        // can be multiplied with the current matrix. If yes, get() the second matrix. If no, consume the
+        // first matrix and move on.
+        use_ptr = get_cnt(synCounter->cons) % MAX;
+        if ((get_cnt(synCounter->prod) - get_cnt(synCounter->cons)) > 0
+            && (product = MatrixMultiply(matrix1, bigmatrix[use_ptr])) != NULL) {
 
+            pthread_mutex_lock(&mutex);
+            Matrix *matrix2 = get();
+            pthread_cond_signal(&empty);
+            pthread_mutex_unlock(&mutex);
+            stats->multtotal++;
+            stats->sumtotal += SumMatrix(product);
 
-        pthread_mutex_lock(&mutex);
-        Matrix *M2 = get();
-        pthread_cond_signal(&cond);
-        pthread_mutex_unlock(&mutex);
+            DisplayMatrix(matrix1, stdout);
+            printf("    X\n");
+            DisplayMatrix(matrix2, stdout);
+            printf("    =\n");
+            DisplayMatrix(product, stdout);
+            printf("\n");
+            printf("----------------------------\n");
+            FreeMatrix(matrix2);
+            FreeMatrix(product);
 
-
-        Matrix *Multiply = MatrixMultiply(M1, M2);
-
-        printf("Multiply occured?\n");
-
-        if (Multiply != NULL) {
-
-            DisplayMatrix(M1, stdout);
-            DisplayMatrix(M2, stdout);
-            DisplayMatrix(Multiply, stdout);
-
-            FreeMatrix(M2);
-            FreeMatrix(Multiply);
         }
-        FreeMatrix(M1);
-
-
-
+        // If the multiplication was not viable only need to free the first matrix
+        FreeMatrix(matrix1);
     }
-
-    printf("Consumed worked\n");
-
-//    todo: update stats again
     return NULL;
 }
+
