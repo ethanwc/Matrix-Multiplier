@@ -37,7 +37,7 @@ counters_t *synCounter;
 counter_t *counter;
 
 // Define the stuff used
-void setuo() {
+void setup() {
     counter_t *prod, *cons; //Producer and consumer counter
     prod = (counter_t *) malloc(sizeof(counter_t));
     cons = (counter_t *) malloc(sizeof(counter_t));
