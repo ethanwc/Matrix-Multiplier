@@ -47,12 +47,10 @@ void setup() {
     init_cnt(prod);
     init_cnt(cons);
     init_cnt(buffercounter);
-
 }
 
 // Bounded buffer put() get()
-int put(Matrix * value)
-{
+int put(Matrix * value) {
     int fill_ptr;
     fill_ptr = get_cnt(synchronizedcounter->prod) % MAX;
     bigmatrix[fill_ptr] = value;
@@ -69,21 +67,19 @@ Matrix * get() {
     return res;
 }
 
-
 // Matrix PRODUCER worker thread
 void *prod_worker(void *arg) {
     int i;
     ProdConsStats *stats = arg;
 
     for (i = 0; i < LOOPS; i++) {
-        Matrix *value = GenMatrixRandom();
-
+        Matrix *m = GenMatrixRandom();
         pthread_mutex_lock(&mutex);
 
         //wait while buffer size >= max
         while (get_cnt(buffercounter) == MAX) pthread_cond_wait(&cond, &mutex);
 
-        put(value);
+        put(m);
         pthread_cond_signal(&cond);
         pthread_mutex_unlock(&mutex);
     }
@@ -113,7 +109,6 @@ void *cons_worker(void *arg)
         //signal completion
         pthread_cond_signal(&cond);
         pthread_mutex_unlock(&mutex);
-
 
         use_ptr = get_cnt(synchronizedcounter->cons) % MAX;
         res = MatrixMultiply(m1, bigmatrix[use_ptr]);

@@ -38,10 +38,9 @@
 #include "prodcons.h"
 #include "pcmatrix.h"
 
-int main (int argc, char * argv[])
-{
+int main (int argc, char * argv[]) {
     int numw = NUMWORK;
-    int i , producers, consumers, productTotal, consumerTotal, consumerMultiply;
+    int i;
 
     // Array of thread IDs
     pthread_t *tid;
@@ -51,9 +50,9 @@ int main (int argc, char * argv[])
     //setup the conters
     setup();
 
-    printf("Producing %d %dx%d matrices.\n",LOOPS, ROW, COL);
-    printf("Using a shared buffer of size=%d\n", MAX);
-    printf("With %d producer and consumer thread(s).\n",numw);
+    printf("%d Matricies of %dx%d being produced.\n", LOOPS, ROW, COL);
+    printf("Buffer size: %d\n", MAX);
+    printf("Prod and con threads: %d\n",numw);
     printf("\n");
 
     // Allocates enough space for both producers and consumers
@@ -77,18 +76,9 @@ int main (int argc, char * argv[])
         pthread_join(tid[i + 1], NULL);
     }
 
-
-    producers = stats->sumtotal;
-    consumers = stats->sumtotal;
-    productTotal = stats->matrixtotal;
-    consumerTotal = stats->matrixtotal;
-    consumerMultiply = stats->multtotal;
-
     // consume ProdConsStats from producer and consumer threads
-    // add up total matrix stats in producers, consumers, productTotal, consumerTotal, consmerMultiply
-
-    printf("Sum of Matrix elements --> Produced=%d = Consumed=%d\n",producers, consumers);
-    printf("Matrices produced=%d consumed=%d multiplied=%d\n",productTotal ,consumerTotal, consumerMultiply);
+    printf("Sum of Matrix elements --> Produced=%d = Consumed=%d\n", stats->sumtotal, stats->sumtotal);
+    printf("Matrices produced=%d consumed=%d multiplied=%d\n", stats->matrixtotal, stats->matrixtotal, stats->multtotal);
 
     return 0;
 }
