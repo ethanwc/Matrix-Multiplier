@@ -90,14 +90,14 @@ int main (int argc, char * argv[])
     consumerMultiply = stats->multtotal;
 
     // consume ProdConsStats from producer and consumer threads
-    // add up total matrix stats in prs, cos, prodtot, constot, consmul
+    // add up total matrix stats in products, consumers, productTotal, consumerTotal, consmerMultiply
 
     printf("Sum of Matrix elements --> Produced=%d = Consumed=%d\n",products, consumers);
     printf("Matrices produced=%d consumed=%d multiplied=%d\n",productTotal ,consumerTotal, consumerMultiply);
 
-    // Displays runtime
+    // Displays the runtime
     times = clock() - times;
-    double time_taken = ((double)times)/CLOCKS_PER_SEC; // in seconds
+    double time_taken = ((double)times)/CLOCKS_PER_SEC;
     printf("pcMatrix took %f seconds to execute \n", time_taken);
 
     return 0;
