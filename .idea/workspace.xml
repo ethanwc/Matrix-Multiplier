@@ -11,9 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c87d807-1c00-461b-915a-2a72e6693c73" name="Default" comment="Did some stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2c87d807-1c00-461b-915a-2a72e6693c73" name="Default" comment="update again`" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,8 +82,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pcmatrix.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            <state relative-caret-position="464">
+              <caret line="22" column="48" lean-forward="true" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
               <folding>
                 <element signature="e#1414#1432#0" expanded="true" />
               </folding>
@@ -129,7 +127,7 @@
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="56" />
     <option name="width" value="1600" />
     <option name="height" value="1744" />
@@ -202,7 +200,7 @@
       <updated>1558918925624</updated>
       <workItem from="1558918926732" duration="312000" />
       <workItem from="1559078149842" duration="1759000" />
-      <workItem from="1559153134140" duration="4944000" />
+      <workItem from="1559153134140" duration="5458000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1559155406287</created>
@@ -218,11 +216,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559157387319</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update again">
+      <created>1559158085818</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559158085818</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7015000" />
+    <option name="totallyTimeSpent" value="7529000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -235,7 +240,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="56" width="3200" height="1744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1392283" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -266,7 +270,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <MESSAGE value="Did some stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Did some stuff" />
+    <MESSAGE value="update again" />
+    <option name="LAST_COMMIT_MESSAGE" value="update again" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/matrix.h">
@@ -343,8 +348,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pcmatrix.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        <state relative-caret-position="464">
+          <caret line="22" column="48" lean-forward="true" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
           <folding>
             <element signature="e#1414#1432#0" expanded="true" />
           </folding>

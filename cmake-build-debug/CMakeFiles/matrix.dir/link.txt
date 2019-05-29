@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/matrix.dir/pcmatrix.c.o CMakeFiles/matrix.dir/matrix.c.o CMakeFiles/matrix.dir/counter.c.o CMakeFiles/matrix.dir/prodcons.c.o  -o matrix 
