@@ -1,6 +1,6 @@
 /*
- *  counter header
- *  Function prototypes, data, and constants for synchronized counter module
+ *  buffercounter header
+ *  Function prototypes, data, and constants for synchronized buffercounter module
  *
  *  University of Washington, Tacoma
  *  TCSS 422 - Operating Systems
@@ -11,7 +11,7 @@
 
 #include <sys/types.h>
 
-// counter structures
+// buffercounter structures
 typedef struct __counter_t {
     int value;
     pthread_mutex_t  lock;
@@ -22,7 +22,7 @@ typedef struct __counters_t {
     counter_t * cons;
 } counters_t;
 
-// counter methods
+// buffercounter methods
 void init_cnt(counter_t *c);
 void increment_cnt(counter_t *c);
 void decrement_cnt(counter_t *c);

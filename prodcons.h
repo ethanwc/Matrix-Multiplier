@@ -26,5 +26,4 @@ void *cons_worker(void *arg);
 // Routines to add and remove matrices from the bounded buffer
 int put(Matrix *value);
 Matrix * get();
-void initCounters();
-//void setup();
+void setup();

@@ -67,8 +67,7 @@ int main (int argc, char * argv[])
     stats->multtotal = 0;
     stats->matrixtotal = 0;
 
-    // Initializes the counters used in prodcons
-    initCounters();
+    setup();
     // create producers/consumers
     for (i = 0; i < numw; i+=2) {
         pthread_create(&tid[i], NULL, prod_worker, stats);
@@ -89,16 +88,8 @@ int main (int argc, char * argv[])
     int constot = stats->matrixtotal;
     int consmul = stats->multtotal;
 
-    // consume ProdConsStats from producer and consumer threads
-    // add up total matrix stats in prs, cos, prodtot, constot, consmul
-
     printf("Sum of Matrix elements --> Produced=%d = Consumed=%d\n",prs,cos);
     printf("Matrices produced=%d consumed=%d multiplied=%d\n",prodtot,constot,consmul);
-
-    // Displays runtime
-    t = clock() - t;
-    double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
-    printf("pcMatrix took %f seconds to execute \n", time_taken);
 
     return 0;
 }
